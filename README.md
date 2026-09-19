@@ -35,7 +35,8 @@ cresco_nexus/
 └── assets/
     ├── css/styles.css  Design system + components
     ├── js/main.js      Nav, reveal, form handling
-    └── favicon.svg     Site icon
+    ├── logo-96.png     Header + footer brand mark (derived from logo.png)
+    └── favicon.png     Site icon (derived from logo.png)
 ```
 
 ## Run locally

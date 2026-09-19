@@ -14,13 +14,15 @@ cresco_nexus/
 ├── team.html         Faculty + 7 core team members
 ├── pilot.html        3-month plan + typical month + week-by-week
 ├── join.html         Onboarding id="onboarding" + Formspree form
+├── logo.png          Master logo (1024×1024, white bg, navy artwork) — source file, not referenced by pages
 ├── README.md         Local run + GitHub Pages deploy + Formspree setup
 └── assets/
     ├── css/styles.css   Design system (~295 CSS rules, braces balanced)
     ├── js/main.js       Nav, scroll reveal, Formspree handler, checkbox validation
-    └── favicon.svg      Node-network mark (navy/green)
+    ├── logo-96.png      Optimized downscale used in header (38px) + footer (56px)
+    └── favicon.png      Optimized downscale (64px) used as the site icon on every page
 ```
-Verified: every page has exactly 1 `</html>`, 1 `<h1>`, 1 `<body>`, 1 `<main>`; all pages import `assets/css/styles.css`, `assets/js/main.js`, `assets/favicon.svg`; footer anchor targets (`about.html#cycle`, `programs.html#one-skill`, `programs.html#progression`, `join.html#onboarding`) all exist. No leftover `__PART_*__` markers. CSS braces balanced (295/295).
+Verified: every page has exactly 1 `</html>`, 1 `<h1>`, 1 `<body>`, 1 `<main>`; all pages import `assets/css/styles.css`, `assets/js/main.js`; footer anchor targets (`about.html#cycle`, `programs.html#one-skill`, `programs.html#progression`, `join.html#onboarding`) all exist. No leftover `__PART_*__` markers. CSS braces balanced (295/295). Brand mark: header uses `<img class="brand__logo">`, footer uses `<img class="footer-brand__logo">`, favicon is `assets/favicon.png`; legacy `assets/favicon.svg` deleted.
 
 ## Design system (WCAG AA verified)
 - Primary navy `#1E3A5F` (11.5:1 on white), accent green `#16803E` (5.01:1), navy-deep `#142942`, navy-ink `#16304F`, navy-soft `#EDF1F6`.
@@ -61,6 +63,8 @@ Verified: every page has exactly 1 `</html>`, 1 `<h1>`, 1 `<body>`, 1 `<main>`; 
 - No build step, no package.json, no tests/lint configured.
 
 ## Recent changes
+- Logo rollout: replaced the inline-SVG header mark and the favicon with the new official logo (`logo.png`, untracked master at repo root). Optimized downscales in `assets/`: `logo-96.png` (header `.brand__logo` 38px + footer `.footer-brand__logo` 56px) and `favicon.png` (64px, now the site icon). Both `<img>` marks are decorative (`alt=""` / `aria-hidden`); adjacent brand text + link aria-label carry the name. Delete legacy `assets/favicon.svg` after confirming no references.
+- Hero chip (balance): see note above.
 - Hero chip (`index.html` / `styles.css`): the "One Skill. One Month." chip was floating disconnected at the bottom-left of the motif (negative left margin). Now `align-self: center`, centered on the Grow node axis, tucked up with `margin-top: -2.2rem`, and gets a bubble-tail notched connector via `.hero__chip::after`. Also moved `aria-hidden` from the `.hero__motif` wrapper to the SVG so the chip text is screen-reader accessible. Verified at 1440 and 1150 px (centered, no diagram node/label covered, no overflow). Still hidden below 1100 px.
 
 ## If continuing next time
