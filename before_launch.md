@@ -1,0 +1,1 @@
+Before launch, replace 4 placeholders: YOUR_FORM_ID (Formspree) in join.html, YOUR_USERNAME in every og:url/canonical, # social links, and hello@cresconexus.in email.
