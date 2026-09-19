@@ -60,6 +60,9 @@ Verified: every page has exactly 1 `</html>`, 1 `<h1>`, 1 `<body>`, 1 `<main>`; 
 - Serve locally: `python -m http.server 8000` (run from project root).
 - No build step, no package.json, no tests/lint configured.
 
+## Recent changes
+- Hero chip (`index.html` / `styles.css`): the "One Skill. One Month." chip was floating disconnected at the bottom-left of the motif (negative left margin). Now `align-self: center`, centered on the Grow node axis, tucked up with `margin-top: -2.2rem`, and gets a bubble-tail notched connector via `.hero__chip::after`. Also moved `aria-hidden` from the `.hero__motif` wrapper to the SVG so the chip text is screen-reader accessible. Verified at 1440 and 1150 px (centered, no diagram node/label covered, no overflow). Still hidden below 1100 px.
+
 ## If continuing next time
 1. Optionally run an HTML validator (e.g. `npx html-validate`) or a lighthouse pass for accessibility.
 2. Optionally replace placeholders (above) when real values are known.

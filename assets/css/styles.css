@@ -342,10 +342,8 @@ li:last-child { margin-bottom: 0; }
 
 .hero__chip {
   position: relative;
-  left: auto;
-  bottom: auto;
+  align-self: center;
   margin-top: -2.2rem;
-  margin-left: -0.9rem;
   background: var(--card);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius);
@@ -356,6 +354,17 @@ li:last-child { margin-bottom: 0; }
   align-items: center;
   max-width: 290px;
   z-index: 1;
+}
+.hero__chip::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 14px; height: 14px;
+  background: var(--card);
+  border-left: 1px solid var(--border-strong);
+  border-top: 1px solid var(--border-strong);
+  transform: translateX(-50%) rotate(45deg);
 }
 .hero__chip .chip-mark {
   flex: none;
