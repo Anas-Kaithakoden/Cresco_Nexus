@@ -322,8 +322,8 @@ li:last-child { margin-bottom: 0; }
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: .5; transform: scale(.8); }
 }
-.hero__motif { position: relative; }
-.motif-svg { width: 100%; height: auto; }
+.hero__motif { position: relative; display: flex; flex-direction: column; align-items: flex-start; }
+.motif-svg { width: 100%; height: auto; display: block; }
 .motif-svg .node-line { stroke: var(--navy); stroke-opacity: .28; }
 .motif-svg .node-core { fill: var(--navy); }
 .motif-svg .node-core--green { fill: var(--green); }
@@ -341,9 +341,11 @@ li:last-child { margin-bottom: 0; }
 }
 
 .hero__chip {
-  position: absolute;
-  left: -14px;
-  bottom: 6px;
+  position: relative;
+  left: auto;
+  bottom: auto;
+  margin-top: -2.2rem;
+  margin-left: -0.9rem;
   background: var(--card);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius);
@@ -353,6 +355,7 @@ li:last-child { margin-bottom: 0; }
   gap: .8rem;
   align-items: center;
   max-width: 290px;
+  z-index: 1;
 }
 .hero__chip .chip-mark {
   flex: none;
